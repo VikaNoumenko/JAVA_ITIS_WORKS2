@@ -9,9 +9,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by АЛИМ on 17.04.2017.
- */
+
 public class AutoDataStorage {
 
     private String fileName;

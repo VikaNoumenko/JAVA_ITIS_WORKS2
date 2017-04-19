@@ -1,8 +1,6 @@
 package ru.itis.main.models;
 
-/**
- * Created by АЛИМ on 17.04.2017.
- */
+
 public class Auto {
     private int id;
     private String model;

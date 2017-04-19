@@ -13,6 +13,13 @@ public class User {
         this.name = name;
         this.age = age;
     }
+    public User(int id, String login, String password, String name, int age) {
+        this.id = id;
+        this.login = login;
+        this.password = password;
+        this.name = name;
+        this.age = age;
+    }
 
     public int getId() {
         return id;
@@ -60,5 +67,18 @@ public class User {
                 this.password + " " +
                 this.name + " " +
                 this.age;
+    }
+
+
+    @Override
+    public boolean equals(Object object) {
+        if (object instanceof User) {
+            User that = (User)object;
+            return this.id == that.id &&
+                    this.age == that.age &&
+                    this.name.equals(that.name) &&
+                    this.login.equals(that.login) &&
+                    this.password.equals(that.password);
+        } return false;
     }
 }

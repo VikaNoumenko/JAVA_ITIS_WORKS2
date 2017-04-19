@@ -1,5 +1,6 @@
 package ru.itis.main.storages;
 
+import ru.itis.main.exceptions.UserNotFoundException;
 import ru.itis.main.generators.IdGenerator;
 import ru.itis.main.models.User;
 
@@ -66,12 +67,20 @@ public class UsersDataStorage {
                 }
                 currentUserData = reader.readLine();
             }
+
         } catch (FileNotFoundException e) {
             System.err.println("File not found");
         } catch (IOException e) {
             System.err.println("IO Exception");
+
         }
-        return null;
+
+        // TODO: создать Exception UserNotFoundException наследованный от Runtime
+        // TODO: выбросить UserNotFound
+
+
+        throw new UserNotFoundException("User with id: " + id + " not found");
+
     }
 
     public List<User> findAll() {
