@@ -24,6 +24,7 @@ public class SingletonIdGenerator {
 
     // поле, в котором содержится последний сгенерированный id
     private int lastGeneratedId;
+    private int lastGeneratedAutoId;
 
     private SingletonIdGenerator(String idFileName) {
         this.idFileName = idFileName;
@@ -65,12 +66,12 @@ public class SingletonIdGenerator {
 //        try {
 //            int newId = lastGeneratedAutoId + 1;
 //            lastGeneratedAutoId = newId;
-//            BufferedWriter writer = new BufferedWriter(new FileWriter(idFileName));
-//            writer.write(lastGeneratedAutoId+" "+newId);
+//           Writer writer = new Writer(new FileWriter(idFileName));
+//            writer.write(newId + " ");
 //            writer.close();
 //            return newId;
 //        } catch (IOException e) {
-//            e.printStackTrace();
+//            System.err.println("IO Exception");
 //        }
 //        return -1;
 //    }
