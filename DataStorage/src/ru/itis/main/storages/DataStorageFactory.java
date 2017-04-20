@@ -14,7 +14,7 @@ public class DataStorageFactory {
             Properties properties = new Properties();
             properties.load(new FileInputStream("resources\\app.properties"));
             String fileName = properties.getProperty("users.file");
-            return new UsersDataStorage(fileName);
+//            return new UsersDataStorage(fileName);
         } catch (IOException e) {
             System.err.println("IO Exception");
         }
@@ -27,7 +27,7 @@ public class DataStorageFactory {
             Properties properties = new Properties();
             properties.load(new FileInputStream("resources\\app.properties"));
             String fileName = properties.getProperty("autos.file");
-            return new AutoDataStorage(fileName);
+//            return new AutoDataStorage(fileName);
         } catch (IOException e) {
             System.err.println("IO Exception ");
         }

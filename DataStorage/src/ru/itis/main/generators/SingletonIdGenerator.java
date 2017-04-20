@@ -61,17 +61,17 @@ public class SingletonIdGenerator {
         }
         return newId;
     }
-    public int generateAutoId(){
-        try {
-            int newId = lastGeneratedAutoId + 1;
-            lastGeneratedAutoId = newId;
-            BufferedWriter writer = new BufferedWriter(new FileWriter(idFileName));
-            writer.write(lastGeneratedAutoId+" "+newId);
-            writer.close();
-            return newId;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return -1;
-    }
+//    public int generateAutoId(){
+//        try {
+//            int newId = lastGeneratedAutoId + 1;
+//            lastGeneratedAutoId = newId;
+//            BufferedWriter writer = new BufferedWriter(new FileWriter(idFileName));
+//            writer.write(lastGeneratedAutoId+" "+newId);
+//            writer.close();
+//            return newId;
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        return -1;
+//    }
 }

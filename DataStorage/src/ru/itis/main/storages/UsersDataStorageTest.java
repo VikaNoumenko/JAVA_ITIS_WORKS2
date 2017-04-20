@@ -56,17 +56,23 @@ public class UsersDataStorageTest {
         String currentUserData = reader.readLine();;
         while((currentUserData)!= null){
             String[] currentUserDataAsArray = currentUserData.split(" ");
-            User user = new User(currentUserDataAsArray[1],
+            User found = new User(currentUserDataAsArray[1],
                     currentUserDataAsArray[2],
                     currentUserDataAsArray[3],
                     Integer.parseInt(currentUserDataAsArray[4]));
-            user.setId(Integer.parseInt(currentUserDataAsArray[4]));
-            expected.add(user);
+            found.setId(Integer.parseInt(currentUserDataAsArray[4]));
+            expected.add(found);
         }
 
         List<User> actual = usersDataStorage.findAll();
         assertEquals(expected,actual);
     }
+
+    @Test
+    public void TestDelete() throws Exception{
+
+    }
+
 
     @Test
     public void TestUpdate() throws Exception {
@@ -77,8 +83,5 @@ public class UsersDataStorageTest {
         assertEquals(expected,actual);
     }
 
-    @Test
-    public void TestDelete() throws Exception{
 
-    }
 }
