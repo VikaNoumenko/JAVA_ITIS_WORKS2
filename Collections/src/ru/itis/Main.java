@@ -25,9 +25,9 @@ public class Main {
         humanLinkedList.add(victoriya);
 
 
-        for (int i = 0; i < humanLinkedList.size(); i++) {
-            System.out.println(humanLinkedList.get(i));
-        }
+//        for (int i = 0; i < humanLinkedList.size(); i++) {
+//            System.out.println(humanLinkedList.get(i));
+//        }
 
         Iterator<Human> humanIterator = humanLinkedList.iterator();
 
@@ -35,8 +35,8 @@ public class Main {
             System.out.println(humanIterator.next());
         }
 
-        for (Human human : humanLinkedList) {
-            System.out.println(human);
-        }
+//        for (Human human : humanLinkedList) {
+//            System.out.println(human);
+//        }
     }
 }

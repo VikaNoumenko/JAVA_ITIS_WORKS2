@@ -65,7 +65,6 @@ public class LinkedList<T> implements List<T> {
     }
 
     private Node head;
-
     private Node last;
     private int count;
 
@@ -101,7 +100,7 @@ public class LinkedList<T> implements List<T> {
         Node current = head;
         while(current != null){
             if(current.getValue().equals(element)){
-                while(current!=null){
+                while(current!= null){
                     current.setValue(current.getValue());
                     current = current.getNext();
                 }
@@ -111,10 +110,11 @@ public class LinkedList<T> implements List<T> {
             current = current.getNext();
         }
     }
+
+
 //Implemented removeByIndex method:
     @Override
     public void removeByIndex(int index) {
-
             int i = 0;
             Node current = head;
             while(i + 1 != index ){
@@ -163,14 +163,11 @@ public class LinkedList<T> implements List<T> {
 
     @Override
     public void addToBegin(T element) {
-        addToIndex(0,element);
-    }
 
-// Implemented addToIndex:
-    //@Override
-    public void addToIndex(int index, T element) {
 
     }
+
+
 
     @Override
     public Iterator<T> iterator() {

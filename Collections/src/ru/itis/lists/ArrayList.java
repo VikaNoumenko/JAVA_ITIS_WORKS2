@@ -23,6 +23,34 @@ public class ArrayList<T> implements List<T> {
      */
     private int count;
 
+
+    private class ArrayListIterator<T> implements Iterator<T>{
+
+        private int index = 0;
+        private Object elements[];
+        private int size;
+
+
+
+        public ArrayListIterator( Object[] elements, int size) {
+            this.index = 0;
+            this.elements = elements;
+            this.size = size;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return index < size && elements[index] != null;
+        }
+
+        @Override
+        public T next() {
+            return (T)elements[index++];
+        }
+
+
+    }
+
     public ArrayList() {
         count = 0;
         elements = new Object[MAX_SIZE];
@@ -35,25 +63,26 @@ public class ArrayList<T> implements List<T> {
             count++;
         } else throw new ArrayStoreException();
     }
+
+
+
     // Implemented delete method:
 
     @Override
     public void delete(T element) {
-//        for (int j = i.length - 1; j >= 0; j--) {
-//            list.remove(i[j]);
-//        }
-
-        for (int index = 0; index < count; index++) {
-            if (elements[index] == element) {
-                for (int j = index + 1; j < count; j++) {
-                    elements[index] = elements[j];
-                    index++;
+        for (int i = 0; i < count; i++) {
+            if (elements[i] == element) {
+                for (int j = i + 1; j < count; j++) {
+                    elements[i] = elements[j];
+                    i++;
                 }
-                count--;
+                count--;// reduced by one
                 return;
             }
         }
     }
+
+
     //Implemented removeByIndex method:
 
     @Override
@@ -95,12 +124,11 @@ public class ArrayList<T> implements List<T> {
 
     @Override
     public int size() {
-
         return count;
     }
 
     @Override
     public Iterator<T> iterator() {
-        return null;
+        return new ArrayListIterator<T> (elements, count);
     }
 }
