@@ -37,7 +37,7 @@ public class LinkedList<T> implements List<T> {
         }
     }
 
-        // Итератор связного списка
+    // Итератор связного списка
     private class LinkedListIterator implements Iterator<T> {
 
         // итератор всегда помнит текущий узел, а если точнее, тот
@@ -98,9 +98,9 @@ public class LinkedList<T> implements List<T> {
     @Override
     public void delete(T element) {
         Node current = head;
-        while(current != null){
-            if(current.getValue().equals(element)){
-                while(current!= null){
+        while (current != null) {
+            if (current.getValue().equals(element)) {
+                while (current != null) {
                     current.setValue(current.getValue());
                     current = current.getNext();
                 }
@@ -112,24 +112,23 @@ public class LinkedList<T> implements List<T> {
     }
 
 
-//Implemented removeByIndex method:
+    //Implemented removeByIndex method:
     @Override
     public void removeByIndex(int index) {
-            int i = 0;
-            Node current = head;
-            while(i + 1 != index ){
-                i++;
-                current = current.getNext();
-            }
-            Node newNextEl = current.getNext().getNext();
-            if(newNextEl != null) {
-                current.setNext(newNextEl);
-            } else {
-                current.setNext(null);
-                this.last = current;
-            }
+        int i = 0;
+        Node current = head;
+        while (i + 1 != index) {
+            i++;
+            current = current.getNext();
         }
-
+        Node newNextEl = current.getNext().getNext();
+        if (newNextEl != null) {
+            current.setNext(newNextEl);
+        } else {
+            current.setNext(null);
+            this.last = current;
+        }
+    }
 
 
     @Override
@@ -137,14 +136,13 @@ public class LinkedList<T> implements List<T> {
         if (index < count && index >= 0) {
             Node current = this.head;
             int i = 0;
-
             while (i < index) {
                 current = current.next;
                 i++;
             }
-
             return current.value;
-        } throw new IndexOutOfBoundsException();
+        }
+        throw new IndexOutOfBoundsException();
     }
 
     @Override
@@ -161,10 +159,16 @@ public class LinkedList<T> implements List<T> {
         return -1;
     }
 
+    // Implemented addToBegin method:
     @Override
     public void addToBegin(T element) {
-
-
+        if (head == null) {
+            head = new Node(element);
+        } else {
+            Node temp = new Node(element);
+            temp.next = head;
+            head = temp;
+        }
     }
 
 

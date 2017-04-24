@@ -12,17 +12,19 @@ public class Main {
         List<Human> humanLinkedList =
                 new LinkedList<>();
 
-        Human marsel = new Human(1, "Marsel", 23);
-        Human farid = new Human(2, "Farid", 28);
-        Human marat = new Human(3, "Marat", 24);
-        Human ayvar = new Human(4, "Ayvar", 24);
-        Human victoriya = new Human(5, "Victoriya", 22);
+        Human marsel = new Human(1, "M", 23);
+        Human farid = new Human(2, "F", 28);
+        Human marat = new Human(3, "M", 24);
+        Human ayvar = new Human(4, "A", 24);
+        Human victoriya = new Human(5, "V", 22);
 
         humanLinkedList.add(marsel);
         humanLinkedList.add(farid);
         humanLinkedList.add(marat);
         humanLinkedList.add(ayvar);
         humanLinkedList.add(victoriya);
+        humanLinkedList.removeByIndex(3);
+        humanLinkedList.delete(victoriya);
 
 
 //        for (int i = 0; i < humanLinkedList.size(); i++) {

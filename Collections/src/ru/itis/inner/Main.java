@@ -13,7 +13,7 @@ public class Main {
 
         int i = 0;
         while (i < 3){
-            System.out.println(integerQueue.poll());
+            System.out.println(integerQueue.poll());//возвращает голову очереди
             i++;
         }
     }
