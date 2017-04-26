@@ -40,9 +40,15 @@ public class Main {
 //        forUpdating.setId(2);
 //        autoDataStorage.update(forUpdating);
 
-        UsersDataStorage usersDataStorage = DataStorageFactory.getUsersDataStorage();
-        AutoDataStorage autoDataStorage = DataStorageFactory.getAutoDataStorage();
+//        UsersDataStorage usersDataStorage = DataStorageFactory.getUsersDataStorage();
+//        AutoDataStorage autoDataStorage = DataStorageFactory.getAutoDataStorage();
+
+        DataStorageFactory factory = new DataStorageFactory();
+
+        //UsersDataStorage usersDataStorage = factory.getUsersDataStorage(UsersDataStorage.class);
+       // AutoDataStorage autoDataStorage = factory.getAutoDataStorage(AutoDataStorage.class);
 
 
     }
-}
+    }
+

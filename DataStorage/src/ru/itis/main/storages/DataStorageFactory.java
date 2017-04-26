@@ -7,31 +7,47 @@ import java.util.Properties;
 
 public class DataStorageFactory {
 
-    public static UsersDataStorage getUsersDataStorage() {
-        // TODO: метод, возвращающий созданный DataStorage, которому проставлен
+
+    private Properties properties;
+
+    public DataStorageFactory() {
+        properties = new Properties();
+        try {
+            properties.load(new FileInputStream("resources\\app.properties"));
+        } catch (IOException e) {
+            throw new IllegalStateException(e);
+        }
+    }
+    private UsersDataStorage getUsersDataStorage() {
+
         //файл из app.properties
         try {
-            Properties properties = new Properties();
-            properties.load(new FileInputStream("resources\\app.properties"));
-            String fileName = properties.getProperty("users.file");
-//            return new UsersDataStorage(fileName);
-        } catch (IOException e) {
-            System.err.println("IO Exception");
+            String UsersDataStorage = properties.getProperty("UsersDataStorage.class");
+            Class<UsersDataStorage> UsersDataStorageClass = (Class<UsersDataStorage>) Class.forName(UsersDataStorage);
+            UsersDataStorage instance = UsersDataStorageClass.newInstance();
+            return instance;
+        } catch (ReflectiveOperationException e) {
+            throw new IllegalStateException(e);
         }
-        return null;
     }
-
-    //TODO -метод возвращающий DAO с  Auto
-    public static AutoDataStorage getAutoDataStorage() {
+    public <T> T daoClass(Class<T> daoClass) {
+        if (daoClass.getName().equals("ru.itis.UsersDataStorage")) {
+            return (T)getUsersDataStorage();
+        } else if (daoClass.getName().equals("ru.itis.AutoDataStorage")) {
+            return (T)getAutoDataStorage();
+        } else {
+            throw new IllegalArgumentException("No instance");
+        }
+    }
+   private AutoDataStorage getAutoDataStorage() {
         try {
-            Properties properties = new Properties();
-            properties.load(new FileInputStream("resources\\app.properties"));
-            String fileName = properties.getProperty("autos.file");
-//            return new AutoDataStorage(fileName);
-        } catch (IOException e) {
-            System.err.println("IO Exception ");
+            String AutoDataStorage = properties.getProperty("AutoDataStorage.class");
+            Class<AutoDataStorage> AutoDataStorageClass = (Class<AutoDataStorage>) Class.forName(AutoDataStorage);
+            AutoDataStorage instance = AutoDataStorageClass.newInstance();
+             return instance;
+        } catch (ReflectiveOperationException e) {
+            throw new IllegalStateException(e);
         }
-        return null;
-    }
+   }
 
 }
