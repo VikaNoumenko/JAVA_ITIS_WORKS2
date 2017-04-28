@@ -12,11 +12,24 @@ public class Auto {
     private String model;
     private String color;
     private int mileage;
+    private boolean used;
 
-    public Auto(String model, String color, int mileage) {
+    public Auto(String model, String color, int mileage, boolean used) {
         this.model = model;
         this.color = color;
         this.mileage = mileage;
+        this.used = used;
+    }
+    public Auto(int id, String model, String color, int mileage,boolean used) {
+        this.id = id;
+        this.model = model;
+        this.color = color;
+        this.mileage = mileage;
+        this.used = used;
+    }
+
+    public boolean isUsed() {
+        return used;
     }
 
     public int getId() {

@@ -65,7 +65,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/itis/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
@@ -75,10 +75,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataStorageFactory.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DataStorageFactory.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/itis/main/storages/DataStorageFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state relative-caret-position="-218">
               <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
               <folding />
             </state>
@@ -160,8 +160,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="355" />
-    <option name="y" value="367" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
@@ -860,7 +860,7 @@
       <workItem from="1493303584255" duration="46000" />
       <workItem from="1493311946647" duration="1068000" />
       <workItem from="1493387037553" duration="136000" />
-      <workItem from="1493393845143" duration="4675000" />
+      <workItem from="1493393845143" duration="4684000" />
     </task>
     <servers />
   </component>
@@ -870,7 +870,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13067000" />
+    <option name="totallyTimeSpent" value="13076000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -882,7 +882,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="355" y="367" width="1382" height="744" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1257,14 +1257,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/itis/main/storages/DataStorageFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/itis/main/generators/IdGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
@@ -1327,6 +1319,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="32" column="55" lean-forward="true" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/itis/main/storages/DataStorageFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-218">
+          <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
           <folding />
         </state>
       </provider>

@@ -60,10 +60,11 @@ public class AutoDaoFileBasedImpl implements AutoDao {
         @Override
         public Auto mapRow(String row) {
             String rowAsArray[] = row.split(" ");
-            Auto founded = new Auto(
-                    String.valueOf(rowAsArray[0]),
-                    rowAsArray[1],
-                    Integer.parseInt(rowAsArray[2]));
+            Auto founded = new Auto(Integer.parseInt(rowAsArray[0]),
+                    String.valueOf(rowAsArray[1]),
+                    String.valueOf(rowAsArray[2]),
+                    Integer.parseInt(rowAsArray[3]),
+                    Boolean.valueOf(rowAsArray[4]));
             return founded;
         }
     };
@@ -108,12 +109,12 @@ public class AutoDaoFileBasedImpl implements AutoDao {
     public List<Auto> findAllByUsed(boolean isUsed) {
         List<Auto> usedAutos = new ArrayList<>();
         List<Auto> autos = utils.findAll(fileName,autoRowMapper);
-//        for(int i = 0; i < autos.size(); i++ ) {
-//            if (autos.get(i).isUsed()) {
-//                usedAutos.add(autos.get(i));
-//            }
-//        }
-//        return usedAutos;
+        for(int i = 0; i < autos.size(); i++ ) {
+            if (autos.get(i).isUsed()) {
+                usedAutos.add(autos.get(i));
+            }
+        }
+        return usedAutos;
     }
 
 
