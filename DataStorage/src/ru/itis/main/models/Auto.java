@@ -1,16 +1,22 @@
 package ru.itis.main.models;
 
-
+/**
+ * 27.04.2017
+ * Auto
+ *
+ * @author Sidikov Marsel (First Software Engineering Platform)
+ * @version v1.0
+ */
 public class Auto {
     private int id;
     private String model;
     private String color;
-    private int milage;
+    private int mileage;
 
-    public Auto(String model, String color, int milage) {
+    public Auto(String model, String color, int mileage) {
         this.model = model;
         this.color = color;
-        this.milage = milage;
+        this.mileage = mileage;
     }
 
     public int getId() {
@@ -37,18 +43,29 @@ public class Auto {
         this.color = color;
     }
 
-    public int getMilage() {
-        return milage;
+    public int getMileage() {
+        return mileage;
     }
 
-    public void setMilage(int milage) {
-        this.milage = milage;
+    public void setMileage(int mileage) {
+        this.mileage = mileage;
     }
 
     public String toString(){
         return this.id + " " +
                 this.model + " " +
                 this.color + " " +
-                this.milage;
+                this.mileage;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj != null && obj instanceof Auto){
+            Auto that = (Auto)obj;
+            return this.id == that.id
+                    && this.model.equals(that.model)
+                    && this.color.equals(that.color)
+                    && this.mileage == that.mileage;
+        }return false;
     }
 }

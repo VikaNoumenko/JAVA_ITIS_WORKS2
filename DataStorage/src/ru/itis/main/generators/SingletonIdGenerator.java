@@ -3,7 +3,13 @@ package ru.itis.main.generators;
 import java.io.*;
 import java.util.Properties;
 
-
+/**
+ * 18.04.2017
+ * SingletonIdGenerator
+ *
+ * @author Sidikov Marsel (First Software Engineering Platform)
+ * @version v1.0
+ */
 public class SingletonIdGenerator {
     private static SingletonIdGenerator instance;
 
@@ -22,6 +28,7 @@ public class SingletonIdGenerator {
     // сгенерированный id
     private String idFileName;
 
+
     // поле, в котором содержится последний сгенерированный id
     private int lastGeneratedId;
     private int lastGeneratedAutoId;
@@ -34,6 +41,7 @@ public class SingletonIdGenerator {
                     new FileReader(idFileName));
             String id = bufferedReader.readLine();
             lastGeneratedId = Integer.parseInt(id);
+            lastGeneratedAutoId = Integer.parseInt(id);
         } catch (FileNotFoundException e) {
             System.err.println("File not found");
         } catch (IOException e) {
@@ -48,9 +56,10 @@ public class SingletonIdGenerator {
     /**
      * Генерирует новый id,всегда уникальный
      * и всегда на один больше, чем последний сгенерированный
+     *
      * @return сгенерированный идентификатор
      */
-    public int generateUserId() {
+    public int generateId() {
         int newId = lastGeneratedId + 1;
         lastGeneratedId = newId;
         try {
@@ -62,17 +71,19 @@ public class SingletonIdGenerator {
         }
         return newId;
     }
-//    public int generateAutoId(){
-//        try {
-//            int newId = lastGeneratedAutoId + 1;
-//            lastGeneratedAutoId = newId;
-//           Writer writer = new Writer(new FileWriter(idFileName));
-//            writer.write(newId + " ");
-//            writer.close();
-//            return newId;
-//        } catch (IOException e) {
-//            System.err.println("IO Exception");
-//        }
-//        return -1;
-//    }
+
+    public int generateAutoId() {
+        try {
+            int newId = lastGeneratedAutoId + 1;
+            lastGeneratedAutoId = newId;
+           Writer writer = new FileWriter((idFileName));
+            writer.write(newId + " ");
+            writer.close();
+            return newId;
+        } catch (IOException e) {
+            System.err.println("IO Exception");
+        }
+        return -1;
+    }
+
 }

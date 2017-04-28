@@ -7,14 +7,15 @@ public class User {
     private String name;
     private int age;
 
-    public User(String login, String password, String name, int age) {
+    public User(int id, String login, String password, String name, int age) {
+        this.id = id;
         this.login = login;
         this.password = password;
         this.name = name;
         this.age = age;
     }
-    public User(int id, String login, String password, String name, int age) {
-        this.id = id;
+
+    public User(String login, String password, String name, int age) {
         this.login = login;
         this.password = password;
         this.name = name;
@@ -69,8 +70,6 @@ public class User {
                 this.age;
     }
 
-
-    @Override
     public boolean equals(Object object) {
         if (object instanceof User) {
             User that = (User)object;
