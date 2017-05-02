@@ -1,6 +1,8 @@
 package ru.itis.main.models;
 
-public class User {
+import java.util.Objects;
+
+public class User implements Model {
     private int id;
     private String login;
     private String password;
@@ -79,5 +81,8 @@ public class User {
                     this.login.equals(that.login) &&
                     this.password.equals(that.password);
         } return false;
+    }
+    public int hashCode() {
+        return Objects.hash(this.id, this.age, this.name, this.login, this.password);
     }
 }

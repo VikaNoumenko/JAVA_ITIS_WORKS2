@@ -7,7 +7,8 @@ package ru.itis.main.models;
  * @author Sidikov Marsel (First Software Engineering Platform)
  * @version v1.0
  */
-public class Auto {
+public class Auto implements Model {
+
     private int id;
     private String model;
     private String color;
@@ -32,13 +33,7 @@ public class Auto {
         return used;
     }
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getModel() {
         return model;
@@ -81,4 +76,14 @@ public class Auto {
                     && this.mileage == that.mileage;
         }return false;
     }
+    @Override
+    public void setId(int id) {
+
+    }
+
+    @Override
+    public int getId() {
+        return 0;
+    }
 }
+

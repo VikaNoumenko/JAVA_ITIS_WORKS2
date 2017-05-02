@@ -1,5 +1,7 @@
 package ru.itis.main.dao;
 
+import ru.itis.main.models.Model;
+
 import java.util.List;
 
 /**
@@ -9,7 +11,7 @@ import java.util.List;
  * @author Sidikov Marsel (First Software Engineering Platform)
  * @version v1.0
  */
-public interface BaseCrudDao<T> {
+public interface BaseCrudDao<T extends Model> {
     T find(int id);
     int save(T model);
     void delete(int id);

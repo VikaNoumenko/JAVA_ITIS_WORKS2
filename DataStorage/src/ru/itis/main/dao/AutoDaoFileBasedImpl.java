@@ -1,12 +1,10 @@
 package ru.itis.main.dao;
 
-import ru.itis.main.exceptions.AutoNotFoundException;
-import ru.itis.main.generators.SingletonIdGenerator;
+import ru.itis.main.exceptions.UserNotFoundException;
 import ru.itis.main.mappers.RowMapper;
 import ru.itis.main.models.Auto;
-import ru.itis.main.utils.FileDaoQueryUtils;
+import ru.itis.main.utils.FileDaoQueryTemplate;
 
-import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,97 +18,61 @@ import java.util.List;
 public class AutoDaoFileBasedImpl implements AutoDao {
 
     private String fileName;
-    private FileDaoQueryUtils utils;
+    private FileDaoQueryTemplate template;
 
-    public AutoDaoFileBasedImpl(String fileName) {
+    public AutoDaoFileBasedImpl(String fileName, FileDaoQueryTemplate template) {
         this.fileName = fileName;
-        this.utils = new FileDaoQueryUtils();
+        this.template = template;
     }
+    private RowMapper<Auto> autoRowMapper = new RowMapper<Auto>() {
+        @Override
+        public Auto mapRow(String row) {
+            String rowAsArray[] = row.split(" ");
+            Auto found = new Auto(
+                    Integer.parseInt(rowAsArray[0]),
+                    String.valueOf(rowAsArray[1]),
+                    String.valueOf(rowAsArray[2]),
+                    Integer.parseInt(rowAsArray[3]),
+                    Boolean.parseBoolean(rowAsArray[4]));
+            return found;
+        }
+    };
     @Override
     public Auto find(int id) {
-        List<Auto> autos =  utils.findByValue(fileName,
+
+        List<Auto> autos =  template.findByValue(fileName,
                 autoRowMapper, 0, id);
 
         if (autos.size() == 0) {
-            throw new AutoNotFoundException("ID of auto :" + id + "is not found");
+            throw new UserNotFoundException("Auto with ID " + id + "is not found");
         } else {
             return autos.get(0);
         }
     }
 
     @Override
-    public int save(Auto auto) {
-        try {
-            auto.setId(SingletonIdGenerator.getGenerator().generateId());
-            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
-            String autoDataAsString = auto.toString();
-            writer.write(autoDataAsString);
-            writer.newLine();
-            writer.close();
-            return auto.getId();
-        } catch (FileNotFoundException e) {
-            System.err.println("File not found");
-        } catch (IOException e) {
-            System.err.println("IO Exception");
-        }
-
-        return -1;
-    }
-    private RowMapper<Auto> autoRowMapper = new RowMapper<Auto>() {
-        @Override
-        public Auto mapRow(String row) {
-            String rowAsArray[] = row.split(" ");
-            Auto founded = new Auto(Integer.parseInt(rowAsArray[0]),
-                    String.valueOf(rowAsArray[1]),
-                    String.valueOf(rowAsArray[2]),
-                    Integer.parseInt(rowAsArray[3]),
-                    Boolean.valueOf(rowAsArray[4]));
-            return founded;
-        }
-    };
-    @Override
-    public void delete(int id) {
-        List<Auto> buffer = findAll();
-        int indexOfDeleted = -1;
-        for (int i = 0; i < buffer.size(); i++) {
-            Auto currentAuto = buffer.get(i);
-            if (currentAuto.getId() == id) {
-                indexOfDeleted = i;
-                break;
-            }
-        }
-        if (indexOfDeleted > -1) {
-            buffer.remove(indexOfDeleted);
-        }
-
-
+    public int save(Auto model) {
+        return template.save(fileName, model);
     }
 
     @Override
-    public void update(Auto model) {
-        List<Auto> buffer = findAll();
-        int idOfUpdatedAuto = model.getId();
-        for(int i =0;i<buffer.size();i++) {
-            Auto currentAuto = buffer.get(i);
-            if (currentAuto.getId()==idOfUpdatedAuto) {
-                buffer.set(i, model);
-                return;
-            }
-        }
+    public void delete(int id) { template.deleteByValue(fileName, 0, id); }
 
-    }
+    @Override
+    public void update(Auto model) { template.update(fileName, model); }
 
     @Override
     public List<Auto> findAll() {
-        return utils.findAll(fileName,autoRowMapper);
+        return template.findAll(fileName, autoRowMapper);
     }
 
     @Override
     public List<Auto> findAllByUsed(boolean isUsed) {
         List<Auto> usedAutos = new ArrayList<>();
-        List<Auto> autos = utils.findAll(fileName,autoRowMapper);
-        for(int i = 0; i < autos.size(); i++ ) {
-            if (autos.get(i).isUsed()) {
+
+        List<Auto> autos = template.findAll(fileName,autoRowMapper);
+        for(int i = 0; i < autos.size(); i++ ){
+            if(autos.get(i).isUsed()){
                 usedAutos.add(autos.get(i));
             }
         }
@@ -118,4 +80,8 @@ public class AutoDaoFileBasedImpl implements AutoDao {
     }
 
 
+    @Override
+    public List<Auto> findAllAutoByUserId(int userId) {
+        return null;
+    }
 }

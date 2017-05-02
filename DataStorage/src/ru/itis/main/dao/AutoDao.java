@@ -13,4 +13,5 @@ import java.util.List;
  */
 public interface AutoDao extends BaseCrudDao<Auto> {
     List<Auto> findAllByUsed(boolean isUsed);
+    List<Auto> findAllAutoByUserId(int userId);
 }

@@ -23,8 +23,8 @@ public class UsersDaoFileBasedImplTest {
     @Before // Before - говорит JUnit-у о том, что этот метод
     // нужно вызывать перед каждым тестом
     public void setUp() throws Exception {
-        //this.usersDaoFileBasedImpl = new UsersDaoFileBasedImpl("test\\users.txt",
-          //      new IdGenerator("test\\id.txt"));
+        this.usersDaoFileBasedImpl = new UsersDaoFileBasedImpl("test\\users.txt",
+                new IdGenerator("test\\id.txt"));
     }
 
     @Test // Test - говорит JUnit-у, что данный метод является методом-тестом
