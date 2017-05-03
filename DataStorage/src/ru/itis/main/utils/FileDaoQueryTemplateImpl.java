@@ -136,7 +136,7 @@ public class FileDaoQueryTemplateImpl implements FileDaoQueryTemplate {
             }
 
         }
-    
+
     @Override
     public void deleteByValue(String fileName, int valueColumn, Object value) {
         try {

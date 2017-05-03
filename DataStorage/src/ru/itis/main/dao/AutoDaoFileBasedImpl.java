@@ -4,7 +4,7 @@ import ru.itis.main.exceptions.UserNotFoundException;
 import ru.itis.main.mappers.RowMapper;
 import ru.itis.main.models.Auto;
 import ru.itis.main.utils.FileDaoQueryTemplate;
-
+import ru.itis.main.models.User;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -82,6 +82,11 @@ public class AutoDaoFileBasedImpl implements AutoDao {
 
     @Override
     public List<Auto> findAllAutoByUserId(int userId) {
-        return null;
+        int userId = user.getId();
+        List<Auto> autos = template.findByValue(fileName,autoRowMapper,4,userId);
+        if(autos.size() > -1 )
+
+            return autos;
+        }
     }
 }

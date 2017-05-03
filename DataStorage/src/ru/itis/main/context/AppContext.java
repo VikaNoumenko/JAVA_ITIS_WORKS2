@@ -78,7 +78,6 @@ public class AppContext {
     }
 
     private  AutoDao getAutoDao() throws ReflectiveOperationException{
-
         String autoDaoClassName = properties.getProperty("auto.dao.class");
         String daoFileName = properties.getProperty("autos.file");
         Class<AutoDao> autoDaoClass = (Class<AutoDao>)Class.forName(autoDaoClassName);

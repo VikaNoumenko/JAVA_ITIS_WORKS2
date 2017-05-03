@@ -14,6 +14,7 @@ public class Auto implements Model {
     private String color;
     private int mileage;
     private boolean used;
+    private int userId;
 
     public Auto(String model, String color, int mileage, boolean used) {
         this.model = model;
@@ -28,12 +29,20 @@ public class Auto implements Model {
         this.mileage = mileage;
         this.used = used;
     }
-
+    public Auto(String model, String color, int mileage, boolean used, int userId) {
+        this.model = model;
+        this.color = color;
+        this.mileage = mileage;
+        this.used = used;
+        this.userId = user.getId();
+    }
     public boolean isUsed() {
         return used;
     }
 
-
+    public int getuserId() {
+        return userId;
+    }
 
     public String getModel() {
         return model;
