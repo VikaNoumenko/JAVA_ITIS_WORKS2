@@ -1,1 +1,12 @@
-15 Auto1 Black 100
+1 Moskvich White 100000.0 true 9
+2 Mersedes Black 0 false 8
+3 RollsRoyce Black 0 false 7
+4 VAZ2115 White 147.2 true 7
+5 VAZ2114 Black 15 true 7
+6 VAZ2109 White 777.0 false 6
+7 Granta Blue 0 false 5
+8 Honda Black 147.2 true 5
+9 Mazda3 Yelow 3 true 4
+10 Mustang Red 0 false 3
+11 BMV Blue 11.2 true 2
+12 Toyota Red 147.2 true 2

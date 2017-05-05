@@ -1,4 +1,4 @@
-package ru.itis.main.dao;
+package ru.itis.main.dao.jdbc;
 
 import ru.itis.main.models.Model;
 

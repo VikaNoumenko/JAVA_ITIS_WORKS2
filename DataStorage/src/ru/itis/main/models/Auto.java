@@ -1,98 +1,104 @@
 package ru.itis.main.models;
 
-/**
- * 27.04.2017
- * Auto
- *
- * @author Sidikov Marsel (First Software Engineering Platform)
- * @version v1.0
- */
-public class Auto implements Model {
-
+public class Auto implements Model{
     private int id;
     private String model;
     private String color;
-    private int mileage;
+    private double carMileage;
     private boolean used;
-    private int userId;
+    private int owner;
 
-    public Auto(String model, String color, int mileage, boolean used) {
-        this.model = model;
-        this.color = color;
-        this.mileage = mileage;
-        this.used = used;
+    private Auto(Builder builder) {
+        this.id = builder.id;
+        this.model = builder.model;
+        this.color = builder.color;
+        this.carMileage = builder.carMileage;
+        this.used = builder.used;
+        this.owner = builder.owner;
     }
-    public Auto(int id, String model, String color, int mileage,boolean used) {
-        this.id = id;
-        this.model = model;
-        this.color = color;
-        this.mileage = mileage;
-        this.used = used;
+
+    public static class Builder{
+        private int id;
+        private String model;
+        private String color;
+        private double carMileage;
+        private boolean used;
+        private int owner;
+
+        public Builder id(int id){
+            this.id = id;
+            return this;
+        }
+        public Builder model(String model){
+            this.model = model;
+            return this;
+        }
+        public Builder color(String color){
+            this.color = color;
+            return this;
+        }
+        public Builder carMileage(Double carMileage){
+            this.carMileage = carMileage;
+            return this;
+        }
+        public Builder used(Boolean used){
+            this.used = used;
+            return this;
+        }
+        public Builder idOwner(int owner){
+            this.owner = owner;
+            return this;
+        }
+        public Auto build(){
+            return new Auto(this);
+        }
+
     }
-    public Auto(String model, String color, int mileage, boolean used, int userId) {
-        this.model = model;
-        this.color = color;
-        this.mileage = mileage;
-        this.used = used;
-        this.userId = user.getId();
+
+    public int getOwner() {
+        return owner;
     }
+
     public boolean isUsed() {
         return used;
     }
 
-    public int getuserId() {
-        return userId;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getModel() {
         return model;
     }
 
-    public void setModel(String model) {
-        this.model = model;
-    }
-
     public String getColor() {
         return color;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public double getCarMileage() {
+        return carMileage;
     }
 
-    public int getMileage() {
-        return mileage;
-    }
-
-    public void setMileage(int mileage) {
-        this.mileage = mileage;
-    }
-
-    public String toString(){
-        return this.id + " " +
-                this.model + " " +
-                this.color + " " +
-                this.mileage;
+    @Override
+    public String toString() {
+        return id+" "+model+" "+color+" "+carMileage+" "+used+" "+owner;
     }
 
     @Override
     public boolean equals(Object obj) {
         if(obj != null && obj instanceof Auto){
             Auto that = (Auto)obj;
+            if(this == that) {return true;}
             return this.id == that.id
                     && this.model.equals(that.model)
                     && this.color.equals(that.color)
-                    && this.mileage == that.mileage;
+                    && this.carMileage == that.carMileage
+                    && this.used == that.used
+                    && this.owner == that.owner;
         }return false;
     }
-    @Override
-    public void setId(int id) {
-
-    }
-
-    @Override
-    public int getId() {
-        return 0;
-    }
 }
-

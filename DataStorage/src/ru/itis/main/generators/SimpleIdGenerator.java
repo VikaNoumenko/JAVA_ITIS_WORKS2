@@ -1,15 +1,8 @@
 package ru.itis.main.generators;
 
 import java.io.*;
-import java.util.Properties;
 
-/**
- * 18.04.2017
- * SimpleIdGenerator
- *
- * @author Sidikov Marsel (First Software Engineering Platform)
- * @version v1.0
- */
+
 public class SimpleIdGenerator implements IdGenerator {
     // имя файла, в котором лежит последний
     // сгенерированный id
@@ -18,35 +11,44 @@ public class SimpleIdGenerator implements IdGenerator {
     // поле, в котором содержится последний сгенерированный id
     private int lastGeneratedId;
 
+
     public SimpleIdGenerator(String idFileName) {
         this.idFileName = idFileName;
         try {
-            BufferedReader bufferedReader
+            BufferedReader reader
                     = new BufferedReader(
                     new FileReader(idFileName));
-            String id = bufferedReader.readLine();
+            String id = reader.readLine();
             lastGeneratedId = Integer.parseInt(id);
+            reader.close();
         } catch (FileNotFoundException e) {
             System.err.println("File not found");
         } catch (IOException e) {
             System.err.println("IO Exception");
         }
     }
+
+
     /**
      * Генерирует новый id,всегда уникальный
      * и всегда на один больше, чем последний сгенерированный
      * @return сгенерированный идентификатор
      */
+
+
+    @Override
     public int generateId() {
+        //TODO: У нас возникает проблема генерации для UserId и AutoId. Подумать над реализацией!
         int newId = lastGeneratedId + 1;
         lastGeneratedId = newId;
         try {
             Writer writer = new FileWriter(idFileName);
-            writer.write(newId + "");
+            writer.write(newId+"");
             writer.close();
+            return newId;
         } catch (IOException e) {
-            System.err.println("IO Exception");
+            System.err.println("File not found");
         }
-        return newId;
+        return -1;
     }
 }
