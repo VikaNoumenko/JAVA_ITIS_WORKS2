@@ -57,10 +57,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AutoDaoJdbcImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AutoDaoJdbcImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/itis/main/dao/jdbc/AutoDaoJdbcImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="1156">
               <caret line="73" column="53" lean-forward="true" selection-start-line="73" selection-start-column="53" selection-end-line="73" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -93,8 +93,8 @@
       <file leaf-file-name="UsersDaoJdbcImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/itis/main/dao/jdbc/UsersDaoJdbcImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2601">
-              <caret line="15" column="2" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+            <state relative-caret-position="1887">
+              <caret line="185" column="5" lean-forward="false" selection-start-line="185" selection-start-column="5" selection-end-line="185" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <marker date="1494006016968" expanded="true" signature="500:565" ph="INSERT INTO group_user... " />
@@ -121,11 +121,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppContext.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AppContext.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/itis/main/context/AppContext.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="70" column="69" lean-forward="false" selection-start-line="70" selection-start-column="69" selection-end-line="70" selection-end-column="69" />
+            <state relative-caret-position="-1227">
+              <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -217,8 +217,8 @@
         <option value="$PROJECT_DIR$/src/ru/itis/main/Main.java" />
         <option value="$PROJECT_DIR$/src/ru/itis/main/dao/files/AutoDaoFileBasedImpl.java" />
         <option value="$PROJECT_DIR$/src/ru/itis/main/dao/files/UsersDaoFileBasedImpl.java" />
-        <option value="$PROJECT_DIR$/src/ru/itis/main/context/AppContext.java" />
         <option value="$PROJECT_DIR$/src/ru/itis/main/dao/jdbc/AutoDaoJdbcImpl.java" />
+        <option value="$PROJECT_DIR$/src/ru/itis/main/context/AppContext.java" />
       </list>
     </option>
   </component>
@@ -949,12 +949,12 @@
       <workItem from="1493726649276" duration="845000" />
       <workItem from="1493734526814" duration="3706000" />
       <workItem from="1493896557916" duration="950000" />
-      <workItem from="1493990447977" duration="15743000" />
+      <workItem from="1493990447977" duration="16198000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56428000" />
+    <option name="totallyTimeSpent" value="56883000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1360,14 +1360,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/itis/main/context/AppContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="70" column="69" lean-forward="false" selection-start-line="70" selection-start-column="69" selection-end-line="70" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/app.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1378,8 +1370,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/itis/main/dao/jdbc/UsersDaoJdbcImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2601">
-          <caret line="15" column="2" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+        <state relative-caret-position="1887">
+          <caret line="185" column="5" lean-forward="false" selection-start-line="185" selection-start-column="5" selection-end-line="185" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <marker date="1494006016968" expanded="true" signature="500:565" ph="INSERT INTO group_user... " />
@@ -1397,7 +1389,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/itis/main/dao/jdbc/AutoDaoJdbcImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="1156">
           <caret line="73" column="53" lean-forward="true" selection-start-line="73" selection-start-column="53" selection-end-line="73" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1413,6 +1405,14 @@
             <marker date="1494011787491" expanded="true" signature="1082:1146" ph="SELECT * FRO... group_user" />
             <marker date="1494011787491" expanded="true" signature="1218:1247" ph="SELECT * FRO... group_user" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/itis/main/context/AppContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1227">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

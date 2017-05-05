@@ -28,7 +28,7 @@ public class AppContext {
         }
     }
 
-    public <T> T getComponent(Class<AutoDao> componentClass) {
+    public <T> T getComponent(Class<T> componentClass) {
         try {
             if (componentClass.getName().equals("ru.itis.main.services.UsersService")) {
                 return (T) getUsersService();
