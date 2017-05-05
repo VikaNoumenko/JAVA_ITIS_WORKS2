@@ -71,7 +71,7 @@ public class AutoDaoJdbcImpl implements AutoDao {
             statement.setInt(5, model.getOwner());
             int addRowsCount = statement.executeUpdate();
             if (addRowsCount == 0) {
-                throw new IllegalArgumentException("not save new auto");
+                throw new IllegalArgumentException();
             }
             ResultSet result = statement.getGeneratedKeys();
             result.next();
