@@ -3,14 +3,11 @@ package ru.itis.main.dao.jdbc;
 
 
 import ru.itis.main.models.Auto;
-import ru.itis.main.models.AutoBuilder;
 import ru.itis.main.models.User;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class AutoDaoJdbcImpl implements AutoDao {
 
@@ -145,7 +142,7 @@ public class AutoDaoJdbcImpl implements AutoDao {
                         .id(result.getInt("id"))
                         .model(result.getString("model"))
                         .color(result.getString("color"))
-                        .carMileage(result.getDouble("carmileage"))
+                        .carMileage(result.getDouble("carMileage"))
                         .used(result.getBoolean("used"))
                         .idOwner(result.getInt("owner_id"))
                         .build();
@@ -169,7 +166,7 @@ public class AutoDaoJdbcImpl implements AutoDao {
                         .id(result.getInt("id"))
                         .model(result.getString("model"))
                         .color(result.getString("color"))
-                        .carMileage(result.getDouble("carmileage"))
+                        .carMileage(result.getDouble("carMileage"))
                         .used(result.getBoolean("used"))
                         .idOwner(result.getInt("owner_id"))
                         .build();

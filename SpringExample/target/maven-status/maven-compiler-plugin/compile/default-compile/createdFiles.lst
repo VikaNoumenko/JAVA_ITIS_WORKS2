@@ -1,0 +1,7 @@
+ru\itis\MessageRenderer.class
+ru\itis\Main.class
+ru\itis\Message.class
+ru\itis\MessageHelloImpl.class
+ru\itis\CustomMessage.class
+ru\itis\MessageRendererPrefixImpl.class
+ru\itis\MessageByeImpl.class

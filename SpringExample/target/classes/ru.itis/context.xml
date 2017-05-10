@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="renderer" class="ru.itis.MessageRendererPrefixImpl" >
+        <constructor-arg value="Vika"/>
+        <constructor-arg ref="customMessage"/>
+    </bean>
+
+    <bean id="message" class="ru.itis.MessageByeImpl"/>
+
+    <bean id="customMessage" class="ru.itis.CustomMessage" >
+        <property name="text" value="PRIVETIKI!"/>
+    </bean>
+</beans>

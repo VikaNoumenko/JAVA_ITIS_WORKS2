@@ -4,7 +4,6 @@ import ru.itis.main.dao.jdbc.AutoDao;
 import ru.itis.main.exceptions.AutoNotFoundException;
 import ru.itis.main.mappers.RowMapper;
 import ru.itis.main.models.Auto;
-import ru.itis.main.models.AutoBuilder;
 import ru.itis.main.models.User;
 import ru.itis.main.utils.FileDaoQueryTemplate;
 

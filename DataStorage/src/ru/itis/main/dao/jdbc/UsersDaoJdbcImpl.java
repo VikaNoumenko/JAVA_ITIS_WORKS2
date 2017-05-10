@@ -1,7 +1,6 @@
 package ru.itis.main.dao.jdbc;
 
 import ru.itis.main.models.Auto;
-import ru.itis.main.models.AutoBuilder;
 import ru.itis.main.models.User;
 
 import java.sql.*;
@@ -119,32 +118,29 @@ public class UsersDaoJdbcImpl implements UsersDao {
     public List<User> findAll() {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SQL_SELECT_ALL_USERS_WITH_JOIN);
-            ResultSet resultSet = preparedStatement.executeQuery();
-
+            ResultSet result = preparedStatement.executeQuery();
             Map<Integer, User> usersMap = new HashMap<>();
-
-            while (resultSet.next()) {
-                int userId = resultSet.getInt(1);
+            while (result.next()) {
+                int userId = result.getInt(1);
                 if (usersMap.get(userId) == null) {
                     User user = new User.Builder()
-                            .id(resultSet.getInt(1))
-                            .name(resultSet.getString("name"))
-                            .login(resultSet.getString("login"))
-                            .password(resultSet.getString("password"))
-                            .age(resultSet.getInt("age"))
-                            .autos(new ArrayList<>()).build();
-                    usersMap.put(userId, user);
+                            .id(result.getInt(1))
+                            .login(result.getString("login"))
+                            .password(result.getString("password"))
+                            .name(result.getString("name"))
+                            .age(result.getInt("age"))
+                            .autos(new ArrayList<>())
+                            .build();
+                    usersMap.put(user.getId(), user);
                 }
-
-                Auto auto = new AutoBuilder()
-                        .setId(resultSet.getInt(6))
-                        .setIdOwner(usersMap.get(userId))
-                        .setCarMileage(resultSet.getDouble("carMileage"))
-                        .setColor(resultSet.getString("color"))
-                        .setModel(resultSet.getString("model"))
-                        .setUsed(resultSet.getBoolean("used"))
-                        .createAuto();
-
+                Auto auto = new Auto.Builder()
+                        .id(result.getInt(6))
+                        .model(result.getString("model"))
+                        .color(result.getString("color"))
+                        .carMileage(result.getDouble("carmileage"))
+                        .used(result.getBoolean("used"))
+                        .idOwner(result.getInt("owner_id"))
+                        .build();
                 usersMap.get(userId).getAutos().add(auto);
             }
             return new ArrayList<>(usersMap.values());
