@@ -2,25 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d251b2a4-0464-451f-9469-feadaec7dbeb" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataStorage/src/ru/itis/test/UsersDaoFileBasedImplTest.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/ca471ac9-4d6e-4b16-aa1b-501f5aa3d63d/_metadata_/metadata" afterPath="$PROJECT_DIR$/.idea/dataSources/ca471ac9-4d6e-4b16-aa1b-501f5aa3d63d/_metadata_/metadata" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/ca471ac9-4d6e-4b16-aa1b-501f5aa3d63d/_metadata_/metadata.values.at" afterPath="$PROJECT_DIR$/.idea/dataSources/ca471ac9-4d6e-4b16-aa1b-501f5aa3d63d/_metadata_/metadata.values.at" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Collections/out/production/Collections/ru/itis/Main.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Collections/out/production/Collections/ru/itis/abstracts/AbstractFigure.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Collections/out/production/Collections/ru/itis/abstracts/Figure.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Collections/out/production/Collections/ru/itis/abstracts/Rectangle.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Collections/out/production/Collections/ru/itis/abstracts/Triangle.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Collections/out/production/Collections/ru/itis/inner/Main.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Collections/out/production/Collections/ru/itis/lists/ArrayList$ArrayListIterator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Collections/out/production/Collections/ru/itis/lists/ArrayList.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Collections/out/production/Collections/ru/itis/lists/LinkedList$LinkedListIterator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Collections/out/production/Collections/ru/itis/lists/LinkedList$Node.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Collections/out/production/Collections/ru/itis/lists/LinkedList.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Collections/out/production/Collections/ru/itis/lists/List.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Collections/out/production/Collections/ru/itis/models/Contract.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Collections/out/production/Collections/ru/itis/models/Human.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Collections/out/production/Collections/ru/itis/test/ArrayListTest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DbfeatJdbc/ru/itis/Main.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/modules.xml" afterPath="$PROJECT_DIR$/../.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Collections/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Collections/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Dao/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Dao/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DataStorage/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../DataStorage/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DataStorage/autos.txt" afterPath="$PROJECT_DIR$/../DataStorage/autos.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DataStorage/id.txt" afterPath="$PROJECT_DIR$/../DataStorage/id.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DataStorage/resources/app.properties" afterPath="$PROJECT_DIR$/../DataStorage/resources/app.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DataStorage/src/ru/itis/main/Main.java" afterPath="$PROJECT_DIR$/../DataStorage/src/ru/itis/main/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DataStorage/src/ru/itis/main/context/AppContext.java" afterPath="$PROJECT_DIR$/../DataStorage/src/ru/itis/main/context/AppContext.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DataStorage/src/ru/itis/main/dao/AutoDao.java" afterPath="$PROJECT_DIR$/../DataStorage/src/ru/itis/main/dao/AutoDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DataStorage/src/ru/itis/main/dao/AutoDaoFileBasedImpl.java" afterPath="$PROJECT_DIR$/../DataStorage/src/ru/itis/main/dao/AutoDaoFileBasedImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DataStorage/src/ru/itis/main/dao/UsersDaoFileBasedImpl.java" afterPath="$PROJECT_DIR$/../DataStorage/src/ru/itis/main/dao/UsersDaoFileBasedImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DataStorage/src/ru/itis/main/generators/SimpleIdGenerator.java" afterPath="$PROJECT_DIR$/../DataStorage/src/ru/itis/main/generators/SimpleIdGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DataStorage/src/ru/itis/main/models/Auto.java" afterPath="$PROJECT_DIR$/../DataStorage/src/ru/itis/main/models/Auto.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DataStorage/src/ru/itis/main/models/User.java" afterPath="$PROJECT_DIR$/../DataStorage/src/ru/itis/main/models/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DataStorage/src/ru/itis/main/utils/FileDaoQueryTemplateImpl.java" afterPath="$PROJECT_DIR$/../DataStorage/src/ru/itis/main/utils/FileDaoQueryTemplateImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DataStorage/users.txt" afterPath="$PROJECT_DIR$/../DataStorage/users.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/ca471ac9-4d6e-4b16-aa1b-501f5aa3d63d.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/ca471ac9-4d6e-4b16-aa1b-501f5aa3d63d.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DbfeatJdbc.iml" afterPath="$PROJECT_DIR$/DbfeatJdbc.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DiInAction/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../DiInAction/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Map/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Map/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Map/src/ru/itis/hash/MainMaskingExample.java" afterPath="$PROJECT_DIR$/../Map/src/ru/itis/hash/MainMaskingExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Patterns/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Patterns/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SpringExample/pom.xml" afterPath="$PROJECT_DIR$/../SpringExample/pom.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -125,26 +133,11 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/itis/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state relative-caret-position="136">
               <caret line="19" column="36" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
               <folding>
                 <marker date="1493742441541" expanded="true" signature="986:1010" ph="SELECT * FRO... group_user" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="itis.public.auto" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/5607c913/ca471ac9-4d6e-4b16-aa1b-501f5aa3d63d/itis.public.auto">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -240,8 +233,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -289,6 +280,8 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -745,14 +738,16 @@
       <workItem from="1493897728572" duration="29000" />
       <workItem from="1493907271201" duration="2843000" />
       <workItem from="1493979284961" duration="867000" />
+      <workItem from="1495029162625" duration="26000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12345000" />
+    <option name="totallyTimeSpent" value="12371000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -768,7 +763,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27760968" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28214827" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30711043" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -811,11 +806,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/5607c913/ca471ac9-4d6e-4b16-aa1b-501f5aa3d63d/itis.public.auto">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ca471ac9-4d6e-4b16-aa1b-501f5aa3d63d/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="26" lean-forward="false" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/5607c913/ca471ac9-4d6e-4b16-aa1b-501f5aa3d63d/itis.public.group_user">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/data.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="41" lean-forward="false" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/schema.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="20" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/itis/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1493742441541" expanded="true" signature="986:1010" ph="SELECT * FRO... group_user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/5607c913/ca471ac9-4d6e-4b16-aa1b-501f5aa3d63d/itis.public.auto">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -912,7 +953,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -972,7 +1012,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -1032,7 +1071,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -1055,7 +1093,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -1142,7 +1179,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -1153,7 +1189,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/itis/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state relative-caret-position="136">
           <caret line="19" column="36" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
           <folding>
             <marker date="1493742441541" expanded="true" signature="986:1010" ph="SELECT * FRO... group_user" />

@@ -1,0 +1,10 @@
+INSERT INTO group_user ( login, password, name, age) VALUES ( 'Marsel', 'qwerty007', 'PRIVET', 23);
+INSERT INTO group_user ( login, password, name, age) VALUES ('Ayaz', 'qwerty008', 'Аяз', 25);
+INSERT INTO group_user ( login, password, name, age) VALUES ('Vika', 'qwerty009', 'Вика', 22);
+INSERT INTO group_user ( login, password, name, age) VALUES ('Artur', 'qwerty011', 'Артур', 23);
+INSERT INTO group_user ( login, password, name, age) VALUES ('Robert', 'qwerty014', 'Роберт', 18);
+INSERT INTO group_user ( login, password, name, age) VALUES ('Denis', 'qwerty010', 'Денис', 22);
+INSERT INTO group_user ( login, password, name, age) VALUES ( 'Andrey', 'qwerty111', 'Андрей', 27);
+INSERT INTO group_user ( login, password, name, age) VALUES ('Marat', 'qwerty012', 'Marat', 24);
+INSERT INTO group_user ( login, password, name, age) VALUES ('Ayvar', 'qwerty013', 'Ayvar', 24);
+INSERT INTO group_user ( login, password, name, age) VALUES ('qwqw', 'qwqw', 'qwqw', 12);
