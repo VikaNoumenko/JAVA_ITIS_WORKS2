@@ -1,20 +1,21 @@
 package ru.itis.servlets;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;
-import ru.itis.dao.UsersDaoJdbcImpl;
+import ru.itis.config.app.AppConfig;
+import ru.itis.models.Auto;
 import ru.itis.models.User;
+import ru.itis.services.AutoService;
 import ru.itis.services.UsersService;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,14 +29,24 @@ public class UsersServlet extends HttpServlet {
 
     private UsersService usersService;
 
+
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        super.init(config);
+        usersService = (UsersService) config.getServletContext().getAttribute("usersService");
+    }
+
     @Override
     public void init() throws ServletException {
         super.init();
+        /*
         GenericXmlApplicationContext context = new GenericXmlApplicationContext();
         ConfigurableEnvironment environment = context.getEnvironment();
         environment.addActiveProfile("dev");
         context.load("ru.itis\\context.xml");
         context.refresh();
+        */
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         usersService = context.getBean(UsersService.class);
     }
 
@@ -44,7 +55,10 @@ public class UsersServlet extends HttpServlet {
         // в запрос кладу атрибут users, который из себя представляет список людей
         String userAge = request.getParameter("age");
         String userName = request.getParameter("name");
-
+        String method = request.getParameter("method");
+        if (method != null && method.equals("post")) {
+            request.getRequestDispatcher("/jsp/usersPost.jsp").forward(request, response);
+        }
         if (userAge != null && userName != null) {
             int userAgeAsInt = Integer.parseInt(userAge);
             request.setAttribute("users", usersService.getAllUsersByNameAndAge(userName, userAgeAsInt));
@@ -56,7 +70,7 @@ public class UsersServlet extends HttpServlet {
         }
 
         // я пераправляю запрос на jsp-страницу
-        request.getRequestDispatcher("/jsp/users.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/usersAll.jsp").forward(request, response);
     }
 
     @Override
@@ -74,5 +88,7 @@ public class UsersServlet extends HttpServlet {
                 .build();
 
         usersService.register(newUser);
+        req.setAttribute("users", usersService.getAll());
+        req.getRequestDispatcher("/jsp/usersAll.jsp").forward(req, resp);
     }
 }

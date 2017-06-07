@@ -11,6 +11,8 @@ import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 import ru.itis.models.CitiesResponse;
+import ru.itis.models.FriendsResponse;
+import ru.itis.models.GroupsResponse;
 
 
 import java.util.ArrayList;
@@ -19,13 +21,16 @@ import java.util.List;
 public class MainController {
 
     @FXML
-    private ListView listViewCities;
+    private ListView listViewFriends;
 
     @FXML
     private Button buttonHello;
 
     @FXML
     TextField countTextField;
+
+    @FXML
+    TextField idTextField;
 
     @FXML
     public void initialize() {
@@ -35,12 +40,20 @@ public class MainController {
             converters.add(new MappingJackson2HttpMessageConverter());
             template.setMessageConverters(converters);
             String count = countTextField.getText();
-            CitiesResponse response = template.getForObject("https://api.vk.com/method/database.getCities?country_id="
-                            + count + "&count=300&need_all=true",
-                    CitiesResponse.class);
-            listViewCities.getItems().clear();
+            String id = idTextField.getText();
+            //CitiesResponse response = template.getForObject("https://api.vk.com/method/database.getCities?country_id="
+                          //  + count + "&count=300&need_all=true",
+                   // CitiesResponse.class);
+            FriendsResponse response = template.getForObject("https://api.vk.com/method/friends.get?user_id="
+                     + id +"&count=" + count,
+                    FriendsResponse.class);
+//            GroupsResponse response = template.getForObject("https://api.vk.com/method/groups.get?id="
+//                            + id +"&count=" + count,
+//                    GroupsResponse.class);
+            listViewFriends.getItems().clear();
+//            listViewGroups.getItems().clear();
             for (int i = 0; i < response.getResponse().size(); i++){
-                listViewCities.getItems().addAll(response.getResponse().get(i).getTitle());
+                listViewFriends.getItems().addAll(response.getResponse().get(i).getFirst_name() + " " + response.getResponse().get(i).getLast_name());
             }
         });
     }

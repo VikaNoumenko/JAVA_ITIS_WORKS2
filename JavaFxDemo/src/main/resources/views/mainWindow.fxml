@@ -11,7 +11,7 @@
             fx:controller="ru.itis.controllers.MainController">
     <children>
         <Button fx:id="buttonHello" layoutX="508.0" layoutY="347.0" mnemonicParsing="false" text="Button"/>
-        <ListView fx:id="listViewCities" layoutX="21.0" layoutY="14.0" prefHeight="370.0" prefWidth="266.0"/>
+        <ListView fx:id="listViewFriends" layoutX="21.0" layoutY="14.0" prefHeight="370.0" prefWidth="266.0"/>
         <TextField fx:id="countTextField" layoutX="300.0" layoutY="14.0"/>
     </children>
 </AnchorPane>

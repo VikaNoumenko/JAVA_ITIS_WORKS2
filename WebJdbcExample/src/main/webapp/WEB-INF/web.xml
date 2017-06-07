@@ -4,13 +4,36 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
+    <listener>
+        <listener-class>ru.itis.config.app.AppListener</listener-class>
+    </listener>
     <servlet>
         <servlet-name>usersServlet</servlet-name>
         <servlet-class>ru.itis.servlets.UsersServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>autosServlet</servlet-name>
+        <servlet-class>ru.itis.servlets.AutoServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>helloServlet</servlet-name>
+        <servlet-class>ru.itis.servlets.HelloServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>helloServlet</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>usersServlet</servlet-name>
         <url-pattern>/users</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>autosServlet</servlet-name>
+        <url-pattern>/autos</url-pattern>
     </servlet-mapping>
 </web-app>

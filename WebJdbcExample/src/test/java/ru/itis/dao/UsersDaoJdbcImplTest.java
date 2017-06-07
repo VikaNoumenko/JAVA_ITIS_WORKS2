@@ -2,9 +2,15 @@ package ru.itis.dao;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import ru.itis.config.app.TestAppConfig;
+import ru.itis.dao.impl.UsersDaoJdbcImpl;
 import ru.itis.models.User;
 
 import static org.junit.Assert.*;
@@ -16,8 +22,11 @@ import static org.junit.Assert.*;
  * @author Sidikov Marsel (First Software Engineering Platform)
  * @version v1.0
  */
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = TestAppConfig.class)
 public class UsersDaoJdbcImplTest {
 
+    @Autowired
     private UsersDaoJdbcImpl usersDao;
 
     private final int USER_6_ID = 6;
@@ -31,12 +40,7 @@ public class UsersDaoJdbcImplTest {
 
     @Before
     public void setUp() throws Exception {
-        GenericXmlApplicationContext context = new GenericXmlApplicationContext();
-        ConfigurableEnvironment environment = context.getEnvironment();
-        environment.addActiveProfile("test");
-        context.load("ru.itis\\context.xml");
-        context.refresh();
-        usersDao = context.getBean(UsersDaoJdbcImpl.class);
+
     }
 
     @Test
