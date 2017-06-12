@@ -1,0 +1,6 @@
+ru\itis\Program.class
+ru\itis\models\User.class
+ru\itis\models\Auto.class
+ru\itis\hibernate\HibernateConnector.class
+ru\itis\models\Child.class
+ru\itis\dao\UsersDaoHibernateImpl.class
