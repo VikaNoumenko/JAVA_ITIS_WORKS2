@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="itis@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.1">
+    <root id="1"/>
+    <database id="2" parent="1" name="itis">
+      <ObjectId>24697</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <schema id="3" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2017-06-02.23:40:40.595</IntrospectionTimestamp>
+      <IntrospectionStateNumber>781</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="4" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="5" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="6" parent="2" name="pg_temp_1">
+      <ObjectId>11848</ObjectId>
+    </schema>
+    <schema id="7" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11849</ObjectId>
+    </schema>
+    <schema id="8" parent="2" name="information_schema">
+      <ObjectId>12113</ObjectId>
+    </schema>
+    <sequence id="9" parent="3" name="group_user_id_seq">
+      <ObjectId>24955</ObjectId>
+      <StateNumber>762</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <table id="10" parent="3" name="autos">
+      <ObjectId>24989</ObjectId>
+      <StateNumber>781</StateNumber>
+    </table>
+    <table id="11" parent="3" name="users">
+      <ObjectId>24957</ObjectId>
+      <StateNumber>776</StateNumber>
+    </table>
+    <column id="12" parent="10" name="model">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>781</StateNumber>
+    </column>
+    <column id="13" parent="10" name="color">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>781</StateNumber>
+    </column>
+    <column id="14" parent="10" name="carmileage">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>781</StateNumber>
+    </column>
+    <column id="15" parent="10" name="used">
+      <Position>4</Position>
+      <DataType>boolean|0</DataType>
+      <StateNumber>781</StateNumber>
+    </column>
+    <column id="16" parent="10" name="owner_id">
+      <Position>5</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>781</StateNumber>
+    </column>
+    <column id="17" parent="11" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>762</StateNumber>
+      <SequenceName>group_user_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;group_user_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="18" parent="11" name="login">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <StateNumber>762</StateNumber>
+    </column>
+    <column id="19" parent="11" name="password">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <StateNumber>762</StateNumber>
+    </column>
+    <column id="20" parent="11" name="name">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+      <StateNumber>762</StateNumber>
+    </column>
+    <column id="21" parent="11" name="age">
+      <Position>5</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>762</StateNumber>
+    </column>
+    <index id="22" parent="11" name="group_user_pkey">
+      <ObjectId>24961</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="23" parent="11" name="group_user_pkey">
+      <ObjectId>24962</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>group_user_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
