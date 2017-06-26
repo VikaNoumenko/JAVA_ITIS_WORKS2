@@ -1,37 +1,27 @@
 package ru.ivmiit;
 
-
-import static ru.ivmiit.Main.RESULT;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class MyThread extends Thread {
     private int start;
     private int end;
-    public static final Object lock = new Object();
-    private int array[];
-
-    private int resultsArray[];
 
     private int threadNumber;
+    private final static Lock lock = new ReentrantLock();
 
-    public MyThread(int start, int end, int array[], int resultsArray[], int threadNumber) {
+    public MyThread(int start, int end, int threadNumber) {
         super();
         this.start = start;
         this.end = end;
-        this.array = array;
-        this.resultsArray = resultsArray;
         this.threadNumber = threadNumber;
     }
 
     public void run() {
-        //int result = 0;
-        synchronized (lock) {
-            for (int i = start; i < end; i++) {
-                //System.out.println("Считает поток: " + threadNumber + ", значения [" + start + ", " + end + "]");
-                //result = result + array[i];
-                RESULT = RESULT + array[i];
-            }
+        for (int i = start; i < end; i++) {
+            lock.lock();
+            Main.result = Main.result + Main.array[i];
+            lock.unlock();
         }
-        //System.out.println("Посчитал поток: " + threadNumber + ", результат: " + result);
-        //resultsArray[threadNumber] = result;
     }
 }

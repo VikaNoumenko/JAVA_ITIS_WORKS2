@@ -20,7 +20,7 @@ public class Human extends Thread {
         }
         synchronized (bonusCard) {
             if (bonusCard.getBonuses() >= bonuses) {
-                System.out.println(who + " is gonna by something");
+                System.out.println(who + " is gonna buy something");
                 if (bonusCard.use(bonuses)) {
                     System.out.println(who + " bought something");
                 } else {

@@ -53,7 +53,9 @@ public class MainController {
             listViewFriends.getItems().clear();
 //            listViewGroups.getItems().clear();
             for (int i = 0; i < response.getResponse().size(); i++){
-                listViewFriends.getItems().addAll(response.getResponse().get(i).getFirst_name() + " " + response.getResponse().get(i).getLast_name());
+                listViewFriends.getItems().addAll(response.getResponse()
+                        .get(i).getFirst_name() + " "
+                        + response.getResponse().get(i).getLast_name());
             }
         });
     }
