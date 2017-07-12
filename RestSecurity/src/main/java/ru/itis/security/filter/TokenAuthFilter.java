@@ -9,6 +9,7 @@ import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
@@ -24,7 +25,6 @@ public class TokenAuthFilter extends GenericFilterBean {
 
     private AuthenticationManager authenticationManager;
 
-
     public TokenAuthFilter(AuthenticationManager authenticationManager) {
         this.authenticationManager = authenticationManager;
     }
@@ -33,20 +33,22 @@ public class TokenAuthFilter extends GenericFilterBean {
             throws IOException, ServletException {
         // перехватили запрос
         HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
-        System.out.println(httpServletRequest.getRequestURI());
+        System.out.println(((HttpServletRequest) servletRequest).getRequestURI());
         try {
-            // вытащили заголовок
-            String headerValue = httpServletRequest.getHeader(AUTH_TOKEN);
+            String token = extractTokenFromHeaders(httpServletRequest);
+            if (token == null) {
+                token = extractTokenFromCookies(httpServletRequest);
+            }
             // если запрос не требует защиты
             if (isNotRequiringProtection(httpServletRequest)) {
                 // filterChain - цепочка фильров
                 // даем доступ дальше
                 filterChain.doFilter(servletRequest, servletResponse);
-            } else if (headerValue == null || headerValue.equals("")) {
+            } else if (token == null || token.equals("")) {
                 throw new IllegalArgumentException("Token not found");
             } else {
                 // выполняет аутентификацию с этим токеном
-                authenticationManager.authenticate(new TokenAuthentication(headerValue));
+                authenticationManager.authenticate(new TokenAuthentication(token));
                 // если manager не дал ошибки - разрешаем дальше
                 filterChain.doFilter(servletRequest, servletResponse);
             }
@@ -57,7 +59,26 @@ public class TokenAuthFilter extends GenericFilterBean {
 
     private boolean isNotRequiringProtection(HttpServletRequest request) {
         return request.getRequestURI().startsWith("/users") && request.getMethod().equals("POST")
-                || request.getRequestURI().endsWith("favicon.ico")
-                || request.getRequestURI().startsWith("/login") && request.getMethod().equals("POST");
+                || request.getRequestURI().startsWith("/login") && request.getMethod().equals("POST")
+                || request.getRequestURI().equals("/signin.html") && request.getMethod().equals("GET")
+                || request.getRequestURI().equals("/registration.html") && request.getMethod().equals("GET")
+                || request.getRequestURI().startsWith("/echoHandler") && request.getMethod().equals("GET")
+                || request.getRequestURI().endsWith("favicon.ico");
+    }
+
+    private String extractTokenFromHeaders(HttpServletRequest request) {
+        return request.getHeader(AUTH_TOKEN);
+    }
+
+    private String extractTokenFromCookies(HttpServletRequest request) {
+        Cookie cookies[] = request.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("Auth-Token")) {
+                    return cookie.getValue();
+                }
+            }
+        }
+        return null;
     }
 }

@@ -1,6 +1,7 @@
 package ru.itis.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * 25.01.17
@@ -31,6 +32,13 @@ public class User {
     @Column(name = "token")
     private String token;
 
+    @ManyToMany
+    @JoinTable(
+            name = "chat_user",
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "chat_id", referencedColumnName = "id"))
+    private List<Chat> chats;
+
     public User() {
     }
 
@@ -39,15 +47,6 @@ public class User {
         this.hashPassword = hashPassword;
         this.age = age;
         this.name = name;
-    }
-
-    public User(int id, String login, String hashPassword, int age, String name, String token) {
-        this.id = id;
-        this.login = login;
-        this.hashPassword = hashPassword;
-        this.age = age;
-        this.name = name;
-        this.token = token;
     }
 
     public int getId() {
@@ -96,5 +95,13 @@ public class User {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public List<Chat> getChats() {
+        return chats;
+    }
+
+    public void setChats(List<Chat> chats) {
+        this.chats = chats;
     }
 }

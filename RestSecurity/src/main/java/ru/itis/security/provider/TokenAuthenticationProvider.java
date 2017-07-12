@@ -36,11 +36,11 @@ public class TokenAuthenticationProvider implements AuthenticationProvider {
         // привязали к этой аутентификации данные пользователя
         tokenAuthentication.setDetails(userDetails);
         // аутентифицируем
-        SecurityContextHolder.getContext().setAuthentication(authentication);
+        //SecurityContextHolder.getContext().setAuthentication(authentication);
         return authentication;
     }
 
     public boolean supports(Class<?> aClass) {
-        return aClass.equals(TokenAuthentication.class);
+            return aClass.equals(TokenAuthentication.class);
     }
 }

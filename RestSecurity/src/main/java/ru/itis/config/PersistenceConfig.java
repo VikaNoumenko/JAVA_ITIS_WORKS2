@@ -36,6 +36,7 @@ public class PersistenceConfig {
     HibernateJpaVendorAdapter hibernateJpaVendorAdapter() {
         HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
         adapter.setShowSql(true);
+        adapter.setGenerateDdl(true);
         return adapter;
     }
 
@@ -44,8 +45,8 @@ public class PersistenceConfig {
     DataSource dataSource() {
         DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
         driverManagerDataSource.setDriverClassName("org.postgresql.Driver");
-        driverManagerDataSource.setUrl("jdbc:postgresql://localhost:5432/itis_users");
-        driverManagerDataSource.setPassword("qwerty007");
+        driverManagerDataSource.setUrl("jdbc:postgresql://localhost:5432/chat");
+        driverManagerDataSource.setPassword("postgres");
         driverManagerDataSource.setUsername("postgres");
         return driverManagerDataSource;
     }
