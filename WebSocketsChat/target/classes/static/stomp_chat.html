@@ -1,0 +1,105 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.2/stomp.min.js"></script>
+    <script src="http://cdn.sockjs.org/sockjs-0.3.min.js"></script>
+    <style>
+        input[type=text], select {
+            width: 50%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=password], select {
+            width: 50%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 50%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        div {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1>Чат</h1>
+    <br/>
+    <button id="connect" onclick="connect()">Войти в чат</button>
+    <button id="disconnect">Выйти из чата</button>
+    <br/>
+    <br/>
+
+    <input type="text" id="message" value=""/>
+    <button id="send" onclick="sendMessage()">Отправить</button>
+    <br/>
+    <pre><textarea id="statusOutput" rows="lO" cols="SO"></textarea></pre>
+    <p>Чат</p>
+    <pre><textarea id="messageOutput" rows="lO" cols="SO"></textarea></pre>
+</div>
+<script type="text/javascript">
+    var stompClient = null;
+
+    function setConnected(connected) {
+       alert('Подключено')
+    }
+
+    function connect() {
+        var socket = new SockJS('/chat');
+        stompClient = Stomp.over(socket);
+        stompClient.connect({}, function (frame) {
+            setConnected(true);
+            console.log('Connected: ' + frame);
+            stompClient.subscribe('/topic/1', function (messageOutput) {
+                showMessageOutput(JSON.parse(messageOutput.body).message);
+            });
+        });
+    }
+
+    function disconnect() {
+        if (stompClient != null) {
+            stompClient.disconnect();
+        }
+        setConnected(false);
+        console.log("Disconnected");
+    }
+
+    function sendMessage() {
+        var text = document.getElementById('message').value;
+        stompClient.send("/app/chat", {},
+            JSON.stringify({'message': text}));
+    }
+
+    function showMessageOutput(messageOutput) {
+        $('#messageOutput').append(messageOutput + '\n');
+    }
+</script>
+</body>
+</html>

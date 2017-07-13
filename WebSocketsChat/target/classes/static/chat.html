@@ -1,0 +1,154 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+    <script language="javascript" type="text/javascript"
+            src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <style>
+        input[type=text], select {
+            width: 50%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=password], select {
+            width: 50%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 50%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        div {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1>Чат</h1>
+    <br/>
+    <button id="connect">Войти в чат</button>
+    <button id="disconnect">Выйти из чата</button>
+    <br/>
+    <br/>
+
+    <input type="text" id="message" value=""/>
+    <button id="send">Отправить</button>
+    <br/>
+    <pre><textarea id="statusOutput" rows="lO" cols="SO"></textarea></pre>
+    <p>Чат</p>
+    <pre><textarea id="messageOutput" rows="lO" cols="SO"></textarea></pre>
+</div>
+<script language="javascript" type="text/javascript">
+    // описываем функцию работы с вебсокетами
+    jQuery(function ($) {
+        var token;
+
+        // функция вывода статуса
+        function writeStatus(message) {
+            $("#statusOutput").val($("#statusOutput").val() + message + '\n');
+        }
+
+        // запись сообщения
+        function writeMessage(message) {
+            $('#messageOutput').append(message + '\n');
+        }
+
+        // подключения
+        $('#connect')
+            .click(function doConnect() {
+                // создается объект websocket
+                websocket = new WebSocket("ws://localhost:8080/authHandler");
+                // при подключении написать CONNECTED
+                websocket.onopen = function (evt) {
+                    var token = getCookie("Auth-Token");
+                    if (typeof websocket !== 'undefined') {
+                        websocket.send(token + " " + "1" + " " + $('#message').val());
+                    } else {
+                        alert("Not connected.");
+                    }
+                    writeStatus("CONNECTED");
+                };
+
+                websocket.onclose = function (evt) {
+                    writeStatus("DISCONNECTED");
+                };
+
+                websocket.onmessage = function (evt) {
+                    writeMessage(evt.data);
+                };
+
+                websocket.onerror = function (evt) {
+                    onError(writeStatus('ERROR:' + evt.data))
+                };
+            });
+
+
+        $('#disconnect')
+            .click(function () {
+                if (typeof websocket != 'undefined') {
+                    websocket.close();
+                    websocket = undefined;
+                } else {
+                    alert("Not connected.");
+                }
+
+            });
+
+        $('#send')
+            .click(function () {
+                var json = {};
+                json["message"] = $("#message").val();
+                $.ajax({
+                    url: 'http://localhost:8080/chats/1/messages',
+                    type: 'post',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    headers: {
+                        'Auth-Token': getCookie("Auth-Token")
+                    },
+                    data: JSON.stringify(json),
+                    success: function (data) {
+                        alert(data);
+                    },
+                    failure: function (errMsg) {
+                        alert(errMsg);
+                    }
+                })
+            });
+
+        function getCookie(name) {
+            var matches = document.cookie.match(new RegExp(
+                "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+            ));
+            return matches ? decodeURIComponent(matches[1]) : undefined;
+        }
+    });
+</script>
+</body>
+</html>
+

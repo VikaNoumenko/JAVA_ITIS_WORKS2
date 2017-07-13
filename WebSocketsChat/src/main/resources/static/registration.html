@@ -1,0 +1,36 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Чат - регистрация</title>
+    <script language="javascript" type="text/javascript"
+            src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script language="javascript" type="text/javascript"
+            src="js/registration.js">
+    </script>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div align="center">
+    <label for="name">Имя</label>
+    <br>
+    <input type="text" id="name" name="name" placeholder="Ваше имя..">
+    <br>
+    <label for="login">Логин</label>
+    <br>
+    <input type="text" id="login" name="login" placeholder="Логин..">
+    <br>
+    <label for="age">Возраст</label>
+    <br>
+    <input type="text" id="age" name="age" placeholder="Возраст..">
+    <br>
+    <label for="password">Пароль</label>
+    <br>
+    <input type="password" id="password" name="password" placeholder="Пароль..">
+    <br>
+    <button id="submit" onclick="registration(
+        document.getElementById('name').value,
+        document.getElementById('age').value,
+        document.getElementById('login').value,
+        document.getElementById('password').value)">Регистрация</button>
+</div>
+</body>
